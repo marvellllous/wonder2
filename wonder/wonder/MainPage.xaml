@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wonder.MainPage">
+
+    <StackLayout
+        Margin="20,35,20,25">
+        <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0">
+            <Label Text="Wonder" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Entry Placeholder="Enter username" />
+        <Entry Placeholder="Enter password" MaxLength="8" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" IsPassword="True"/>
+        <Button x:Name="Login" Text="Login as student" VerticalOptions="Center" HorizontalOptions="Center" Clicked ="Login_Clicked"/>
+        <Button x:Name ="AdminLogin" Text="Login as admin" VerticalOptions="Center" HorizontalOptions="Center" Clicked ="AdminLogin_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
