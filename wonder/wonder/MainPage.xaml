@@ -12,6 +12,7 @@
         <Entry Placeholder="Enter password" MaxLength="8" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" IsPassword="True"/>
         <Button x:Name="Login" Text="Login as student" VerticalOptions="Center" HorizontalOptions="Center" Clicked ="Login_Clicked"/>
         <Button x:Name ="AdminLogin" Text="Login as admin" VerticalOptions="Center" HorizontalOptions="Center" Clicked ="AdminLogin_Clicked"/>
+        <Button x:Name="RegisterPage" Text="Register" VerticalOptions="Center" HorizontalOptions="Center" Clicked="RegisterPage_Clicked"/>
     </StackLayout>
 
 </ContentPage>
