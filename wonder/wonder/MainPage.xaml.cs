@@ -20,17 +20,18 @@ namespace wonder
 
        
 
-       
+       // This takes you to the student login page
         private void Login_Clicked(object sender, EventArgs e)
         {
             Checkindetails(); 
            
-           // Navigation.PushAsync(new StudentProfile());
+           Navigation.PushAsync(new StudentProfile());
         }
 
+        // This tyakes you to the Admin login page 
         private void AdminLogin_Clicked(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new AdminProfile());
+            Navigation.PushAsync(new AdminProfile());
 
         }
         async public void Checkindetails()

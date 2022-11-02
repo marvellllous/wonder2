@@ -19,6 +19,10 @@ namespace wonder
             InitializeComponent();
         }
 
+        private void AdmLogin_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

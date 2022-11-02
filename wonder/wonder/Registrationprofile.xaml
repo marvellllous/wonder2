@@ -4,9 +4,6 @@
              x:Class="wonder.Registrationprofile">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Entry x:Name="UserName" Placeholder="Enter name" />
             <Entry x:Name="Password" Placeholder="Enter Password" />
             <Button Text="Register" x:Name="Register" Clicked="Register_Clicked"/>

@@ -4,9 +4,9 @@
              x:Class="wonder.AdminProfile">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="UserName" Placeholder="Enter name" />
+            <Entry x:Name="Password" Placeholder="Enter Password" />
+            <Button Text="Login" x:Name="AdmLogin" Clicked="AdmLogin_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
