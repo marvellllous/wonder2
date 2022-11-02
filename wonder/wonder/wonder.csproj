@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />

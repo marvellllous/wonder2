@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using SQLite; 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +18,7 @@ namespace wonder
             InitializeComponent();
         }
 
-        private void StudLogin_Clicked(object sender, EventArgs e, SqlConnection sqlConnection)
+        private void StudLogin_Clicked(object sender, EventArgs e)
         {
             if (UserName.Text == "")
             {
@@ -31,7 +31,7 @@ namespace wonder
             else
             {
                 bool exists = false ;
-                using (SqlCommand cmd = new SqlCommand("select count(*) from [User] where UserName = @UserName", sqlConnection))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from [User] where UserName = @UserName"))
                 {
                     cmd.Parameters.AddWithValue("UserName", UserName.Text);
                     exists = (int)cmd.ExecuteScalar() > 0;
