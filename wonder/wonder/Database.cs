@@ -12,14 +12,18 @@ namespace wonder
 
         public Database(string dbPath)
         {
+          
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Person>().Wait();
+            _database.CreateTableAsync<Person>();
         }
 
-        public Task<List<Person>> GetPeopleAsync()
+        public Task<List<Person>> GetPeopleAsync(string username)
         {
-            return _database.Table<Person>().ToListAsync();
+            return _database.QueryAsync<Person>("select count(*) from [Person] where UserName = " + username);
         }
+
+        
+         
 
         public Task<int> SavePersonAsync(Person person)
         {

@@ -6,7 +6,14 @@
         <StackLayout>
             <Entry x:Name="UserName" Placeholder="Enter name" />
             <Entry x:Name="Password" Placeholder="Enter Password" />
-            <Button Text="Register" x:Name="Register" Clicked="Register_Clicked"/>
+            <Button Grid.Column="1" Grid.Row="1" Text="Register" 
+                    BackgroundColor="DodgerBlue" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center" 
+                    CornerRadius="20" 
+                    TextColor="White" 
+                    x:Name="Register" 
+                    Clicked="Register_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

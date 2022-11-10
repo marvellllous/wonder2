@@ -7,7 +7,11 @@
         <StackLayout>
             <Entry x:Name="UserName" Placeholder="Enter name" />
             <Entry x:Name="Password" Placeholder="Enter Password" />
-            <Button Text="Login" x:Name="StudLogin" Clicked= "StudLogin_Clicked"/>
+            <Button Grid.Column="0" Grid.Row="1" 
+                    BackgroundColor="DodgerBlue" 
+                    Text="Login" HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center" CornerRadius="20" 
+                    TextColor="White" x:Name="StudLogin" Clicked= "StudLogin_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

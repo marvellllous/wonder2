@@ -13,12 +13,12 @@ namespace wonder
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StudentProfile : ContentPage
     {
-        public StudentProfile()
+        public  StudentProfile()
         {
             InitializeComponent();
         }
 
-        private void StudLogin_Clicked(object sender, EventArgs e)
+        private async void  StudLogin_Clicked(object sender, EventArgs e)
         {
             if (UserName.Text == "")
             {
@@ -30,17 +30,14 @@ namespace wonder
             }
             else
             {
-                bool exists = false ;
-                using (SqlCommand cmd = new SqlCommand("select count(*) from [User] where UserName = @UserName"))
-                {
-                    cmd.Parameters.AddWithValue("UserName", UserName.Text);
-                    exists = (int)cmd.ExecuteScalar() > 0;
-                }
-                if (exists)
-                    Console.Write("This username has been using by another user.");
+                
+                List<Person> p = await App.Database.GetPeopleAsync(UserName.Text);
+                if (p.Count > 0 )
+                     await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
+
                 else
                 {
-                    Console.Write("Thanks for login in");
+                    await this.DisplayAlert("messege", "Thanks for login in", "ok");
                 }
 
 

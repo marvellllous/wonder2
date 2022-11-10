@@ -22,7 +22,7 @@ namespace wonder
         {
             Person newPerson = new Person();
 
-            newPerson.Name = UserName.Text;
+            newPerson.UserName = UserName.Text;
             newPerson.Password = Password.Text;
 
             await App.Database.SavePersonAsync(newPerson);

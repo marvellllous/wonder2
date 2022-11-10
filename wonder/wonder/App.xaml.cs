@@ -7,7 +7,7 @@ namespace wonder
 {
     public partial class App : Application
     {
-        static Database database;
+        private static Database database;
 
         public static Database Database
         {
