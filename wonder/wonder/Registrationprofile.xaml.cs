@@ -24,9 +24,19 @@ namespace wonder
 
             newPerson.UserName = UserName.Text;
             newPerson.Password = Password.Text;
+            List<Person> person = await App.Database.GetPeopleAsync(UserName.Text);
 
-            await App.Database.SavePersonAsync(newPerson);
-            await Navigation.PopAsync(); 
+                
+                if (person.Count > 0)
+                    await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
+                    
+                else
+                {
+                    await this.DisplayAlert("messege", "Thanks for login in", "ok");
+                    await App.Database.SavePersonAsync(newPerson);
+                    await Navigation.PopAsync();
+                }
+ 
 
 
         }

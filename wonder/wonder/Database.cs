@@ -10,6 +10,7 @@ namespace wonder
     {
         readonly SQLiteAsyncConnection _database;
 
+        //It is creating a new database 
         public Database(string dbPath)
         {
           
@@ -17,17 +18,18 @@ namespace wonder
             _database.CreateTableAsync<Person>();
         }
 
-        public Task<List<Person>> GetPeopleAsync(string username)
+        public async Task<List<Person>> GetPeopleAsync(string username)
         {
-            return _database.QueryAsync<Person>("select count(*) from [Person] where UserName = " + username);
+            string query = "SELECT * FROM Person";
+            List<Person> p = await _database.QueryAsync<Person>(query);
+            return p;
+            
         }
 
         
-         
-
         public Task<int> SavePersonAsync(Person person)
         {
-            return _database.InsertAsync(person);
+           return _database.InsertAsync(person);
         }
     }
 }

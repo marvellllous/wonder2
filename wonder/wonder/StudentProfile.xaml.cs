@@ -18,30 +18,31 @@ namespace wonder
             InitializeComponent();
         }
 
-        private async void  StudLogin_Clicked(object sender, EventArgs e)
+        private async void StudLogin_Clicked(object sender, EventArgs e)
         {
             if (UserName.Text == "")
             {
-                 Console.Write("Enter A Username");
+                await this.DisplayAlert("messege", "Enter A Username", "ok");
             }
             else if (Password.Text == "")
             {
-                Console.Write("Enter A Valid Password");
+                await this.DisplayAlert("messege", "Enter A Valid Password", "ok");
             }
+
+           
+               
+            List<Person> p = await App.Database.GetPeopleAsync(UserName.Text);
+
+            if (p.Count > 0)
+            {
+                await this.DisplayAlert("messege", "Usernasme taken", "ok");
+            }   
             else
             {
-                
-                List<Person> p = await App.Database.GetPeopleAsync(UserName.Text);
-                if (p.Count > 0 )
-                     await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
-
-                else
-                {
-                    await this.DisplayAlert("messege", "Thanks for login in", "ok");
-                }
-
-
+                await this.DisplayAlert("messege", "Thanks for login in", "ok");
             }
+            
+            
         }
     }
 }

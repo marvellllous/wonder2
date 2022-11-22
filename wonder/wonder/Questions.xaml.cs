@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace wonder
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PopupTaskView : ContentView
+    public partial class Questions : ContentPage
     {
-        public PopupTaskView()
+        public Questions()
         {
             InitializeComponent();
         }
