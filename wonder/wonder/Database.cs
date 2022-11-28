@@ -20,9 +20,10 @@ namespace wonder
 
         public async Task<List<Person>> GetPeopleAsync(string username)
         {
-            string query = "SELECT * FROM Person";
+            string query = "SELECT * FROM Person WHERE Name = 'Marv'";
             List<Person> p = await _database.QueryAsync<Person>(query);
             return p;
+
             
         }
 

@@ -32,7 +32,7 @@ namespace wonder
                     
                 else
                 {
-                    await this.DisplayAlert("messege", "Thanks for login in", "ok");
+                    await this.DisplayAlert("messege", "Thanks for registering ", "ok");
                     await App.Database.SavePersonAsync(newPerson);
                     await Navigation.PopAsync();
                 }

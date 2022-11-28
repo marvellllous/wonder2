@@ -29,7 +29,8 @@ namespace wonder
                 await this.DisplayAlert("messege", "Enter A Valid Password", "ok");
             }
 
-           
+            Navigation.PushAsync(new Questions());
+          /*
                
             List<Person> p = await App.Database.GetPeopleAsync(UserName.Text);
 
@@ -41,7 +42,7 @@ namespace wonder
             {
                 await this.DisplayAlert("messege", "Thanks for login in", "ok");
             }
-            
+           */
             
         }
     }

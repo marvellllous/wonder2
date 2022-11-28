@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wonder.Questions">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <CollectionView ItemsSource="{Binding questiongetandsets}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid  Padding="10"
+                           RowDefinitions="Auto, *"
+                           ColumnDefinitions="Auto, *">
+                        <Label Grid.Column="1"
+                               Text="{Binding QName}"
+                               FontAttributes="Bold"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding QAnswer}"
+                               FontAttributes="Bold"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
