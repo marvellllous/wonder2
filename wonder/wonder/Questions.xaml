@@ -12,10 +12,18 @@
                         <Label Grid.Column="1"
                                Text="{Binding QName}"
                                FontAttributes="Bold"/>
-                        <Label Grid.Column="1"
+                        <Button Grid.Column="1"
+                               x:Name="No"
                                Grid.Row="1"
-                               Text="{Binding QAnswer}"
-                               FontAttributes="Bold"/>
+                               Text="NO"
+                               FontAttributes="Bold"
+                               Clicked="No_Clicked"/>
+                        <Button Grid.Column="2"
+                                x:Name="Yes"
+                                Grid.Row="1"
+                                Text="YES"
+                                FontAttributes="Bold"
+                                Clicked="Yes_Clicked"></Button>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
