@@ -24,19 +24,21 @@ namespace wonder
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Is anything worrying you?",
-                //QAnswer = "Yes / No"
+                //QAnswer = "Yes "
+              
             });
 
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Is it easy for you to fall asleep?",
-                //QAnswer = "Yes / No"
+                //QAnswer = "Yes",
+               
             });
 
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Is it easy for you to fall asleep?",
-                //QAnswer = "Yes / No"
+                //QAnswer = "Yes"
             });
 
 
@@ -53,13 +55,10 @@ namespace wonder
             */
         
 
-        private void No_Clicked(object sender, EventArgs e)
-        {
-          
-        }
-
+       
         private async void Yes_Clicked(object sender, EventArgs e)
         {
+    
             int score_Y = 0;
             int score_N = 0;
             Button button = (Button)sender; 
@@ -68,21 +67,28 @@ namespace wonder
             { 
                 case "Yes":
                     score_Y = score_Y + 1;
-                    Console.WriteLine(score_Y);
+                   // Console.WriteLine(score_Y);
+                    await DisplayAlert("messege", "hello", "ok");
                     break;
                 case "No":
                     score_N = score_N + 1;
                     Console.WriteLine(score_N);
+                    await DisplayAlert("messege", "bye", "ok");
                     break;
                 default :
                     break;
          
-            }
+            } 
 
             if (score_Y > score_N)
             {
                 await this.DisplayAlert("messege", "You are giong to be fine", "Ok");
             }
+            else
+            {
+                await this.DisplayAlert("messege", "You not are giong to be fine", "Ok");
+            }
+            
 
         }
     }

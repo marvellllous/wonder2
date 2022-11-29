@@ -7,11 +7,12 @@ namespace wonder
     public class Questiongetandset
     {
         public string QName { get; set; }
-        public string QAnswer { get; set; }
+        //public string QAnswer { get; set; }
 
         public override string ToString()
         {
             return QName;
+           // return QAnswer;
         }
     }
 

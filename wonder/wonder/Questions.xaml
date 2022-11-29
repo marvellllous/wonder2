@@ -17,7 +17,7 @@
                                Grid.Row="1"
                                Text="NO"
                                FontAttributes="Bold"
-                               Clicked="No_Clicked"/>
+                               Clicked="Yes_Clicked"/>
                         <Button Grid.Column="2"
                                 x:Name="Yes"
                                 Grid.Row="1"
