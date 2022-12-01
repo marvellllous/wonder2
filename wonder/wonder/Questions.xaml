@@ -6,9 +6,9 @@
         <CollectionView ItemsSource="{Binding questiongetandsets}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid  Padding="10"
-                           RowDefinitions="Auto, *"
-                           ColumnDefinitions="Auto, *">
+                    <Grid Padding="10"
+                          RowDefinitions="Auto, *" 
+                          ColumnDefinitions="Auto, *" >
                         <Label Grid.Column="1"
                                Text="{Binding QName}"
                                FontAttributes="Bold"/>
@@ -24,6 +24,11 @@
                                 Text="YES"
                                 FontAttributes="Bold"
                                 Clicked="Yes_Clicked"></Button>
+                        <Button VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                x:Name="Submit"
+                                Text="Submit"
+                                Clicked="Submit_Clicked" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

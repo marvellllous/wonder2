@@ -53,42 +53,52 @@ namespace wonder
 
             }
             */
-        
+        // This should be global 
+        public static int score_Y = 0;
+        public static int score_N = 0;
 
        
-        private async void Yes_Clicked(object sender, EventArgs e)
+        private void Yes_Clicked(object sender, EventArgs e)
         {
     
-            int score_Y = 0;
-            int score_N = 0;
-            Button button = (Button)sender; 
+            
+            Button button = (Button)sender;
+            //Console.WriteLine(score_N);
+            //var classId = button.ClassId;
+            //Console.WriteLine(classId);
+
             // This gets the ID of any botton that is being clicked so that there is no need to right it again for anoher button 
-            switch (button.Id.ToString())
+            switch (button.Text)
             { 
-                case "Yes":
-                    score_Y = score_Y + 1;
+                case "YES":
+                    score_Y++;
                    // Console.WriteLine(score_Y);
-                    await DisplayAlert("messege", "hello", "ok");
+                    //await DisplayAlert("messege", "hello", "ok");
                     break;
-                case "No":
-                    score_N = score_N + 1;
+                case "NO":
+                    score_N++;
                     Console.WriteLine(score_N);
-                    await DisplayAlert("messege", "bye", "ok");
+                    //await DisplayAlert("messege", "bye", "ok");
                     break;
                 default :
                     break;
          
-            } 
+            }
 
+            
+        }
+
+        private void Submit_Clicked(object sender, EventArgs e)
+        {
             if (score_Y > score_N)
             {
-                await this.DisplayAlert("messege", "You are giong to be fine", "Ok");
+                DisplayAlert("messege", "You are giong to be fine", "Ok");
             }
-            else
+            if (score_N > score_Y)
             {
-                await this.DisplayAlert("messege", "You not are giong to be fine", "Ok");
+                DisplayAlert("messege", "You are not giong to be fine", "Ok");
             }
-            
+           
 
         }
     }
