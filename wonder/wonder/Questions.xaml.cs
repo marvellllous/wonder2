@@ -58,7 +58,7 @@ namespace wonder
         public static int score_N = 0;
 
        
-        private void Yes_Clicked(object sender, EventArgs e)
+        private  async void Yes_Clicked(object sender, EventArgs e)
         {
     
             
@@ -72,13 +72,19 @@ namespace wonder
             { 
                 case "YES":
                     score_Y++;
-                   // Console.WriteLine(score_Y);
+                    // Console.WriteLine(score_Y);
                     //await DisplayAlert("messege", "hello", "ok");
+                    button.IsEnabled = false;
+                    await Task.Delay(2000);
+                    button.IsEnabled = true;
                     break;
                 case "NO":
                     score_N++;
                     Console.WriteLine(score_N);
                     //await DisplayAlert("messege", "bye", "ok");
+                    button.IsEnabled = false;
+                    await Task.Delay(2000);
+                    button.IsEnabled = true;
                     break;
                 default :
                     break;

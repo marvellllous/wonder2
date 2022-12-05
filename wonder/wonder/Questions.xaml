@@ -16,12 +16,14 @@
                                x:Name="No"
                                Grid.Row="1"
                                Text="NO"
+                               IsEnabled="True"
                                FontAttributes="Bold"
                                Clicked="Yes_Clicked"/>
                         <Button Grid.Column="2"
                                 x:Name="Yes"
                                 Grid.Row="1"
                                 Text="YES"
+                                IsEnabled="True"
                                 FontAttributes="Bold"
                                 Clicked="Yes_Clicked"></Button>
                         <Button VerticalOptions="Center"
