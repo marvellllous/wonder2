@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wonder.StudnavigationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to the navigation page"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Grid.Column="1" Grid.Row="1" 
+                    BackgroundColor="DodgerBlue" 
+                    Text="Answer questions"
+                    x:Name="QuestionPage"
+                    Clicked="QuestionPage_Clicked"/>
+            <Button Grid.Column="0" Grid.Row="1" 
+                    BackgroundColor="DodgerBlue" 
+                    Text="Mood rating"
+                    x:Name="MoodRating"
+                    Clicked="MoodRating_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

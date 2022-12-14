@@ -30,7 +30,7 @@ namespace wonder
 
             questiongetandsets.Add(new Questiongetandset
             {
-                QName = "Is it easy for you to fall asleep?",
+                QName = "Do you usually feel very tired?",
                 //QAnswer = "Yes",
                
             });

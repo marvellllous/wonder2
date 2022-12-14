@@ -6,9 +6,7 @@
         <CollectionView ItemsSource="{Binding questiongetandsets}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10"
-                          RowDefinitions="Auto, *" 
-                          ColumnDefinitions="Auto, *" >
+                    <Grid>
                         <Label Grid.Column="1"
                                Text="{Binding QName}"
                                FontAttributes="Bold"/>

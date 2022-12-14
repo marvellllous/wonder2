@@ -17,27 +17,31 @@ namespace wonder
             InitializeComponent();
         }
 
+        public async Task<bool> IsUsernameTakenAsync(string username)
+        {
+            bool exists = await App.Database.CheckUsernameAsync(username);
+            return exists;
+        }
 
         async private void Register_Clicked(object sender, EventArgs e)
         {
+
             Person newPerson = new Person();
 
             newPerson.UserName = UserName.Text;
             newPerson.Password = Password.Text;
-            List<Person> person = await App.Database.GetPeopleAsync(UserName.Text);
 
-                
-                if (person.Count > 0)
-                    await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
-                    
-                else
-                {
-                    await this.DisplayAlert("messege", "Thanks for registering ", "ok");
-                    await App.Database.SavePersonAsync(newPerson);
-                    await Navigation.PopAsync();
-                }
- 
-
+           
+            if ( await IsUsernameTakenAsync(UserName.Text))
+            {
+                await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
+            }
+            else
+            {
+                await this.DisplayAlert("messege", "Thanks for registering ", "ok");
+                await App.Database.SavePersonAsync(newPerson);
+                await Navigation.PopAsync();
+            }
 
         }
     }

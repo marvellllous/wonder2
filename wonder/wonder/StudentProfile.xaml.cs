@@ -29,7 +29,7 @@ namespace wonder
                 await this.DisplayAlert("messege", "Enter A Valid Password", "ok");
             }
 
-            Navigation.PushAsync(new Questions());
+            await Navigation.PushAsync(new StudnavigationPage());
           /*
                
             List<Person> p = await App.Database.GetPeopleAsync(UserName.Text);
