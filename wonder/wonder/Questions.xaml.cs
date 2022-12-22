@@ -13,7 +13,8 @@ namespace wonder
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Questions : ContentPage
     {
-        public IList<Questiongetandset> questiongetandsets { get; private set; }    
+        public List<Questiongetandset> questiongetandsets { get; private set; }    
+        public List<Answer> answers { get; private set; }
 
         public Questions()
         {
@@ -21,6 +22,22 @@ namespace wonder
 
             // The Questiongetandset are added to the questiongetandsets collecgtion
             questiongetandsets = new List<Questiongetandset>();
+            {
+                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" };
+                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" };
+                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" };
+            }
+            
+
+            answers = new List<Answer>();
+            {
+                new Answer() { Value = 1, Text = "Yes", IsSelected = false };
+                new Answer() { Value = 2, Text = "No", IsSelected = false };
+                new Answer() { Value = 3, Text = "Sort of", IsSelected = false };
+                
+            }
+
+            /*
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Is anything worrying you?",
@@ -40,10 +57,10 @@ namespace wonder
                 QName = "Is it easy for you to fall asleep?",
                 //QAnswer = "Yes"
             });
-
+            */
 
             // This is set to the Questions object
-            BindingContext = this;
+           // BindingContext = this;
 
         }
 
