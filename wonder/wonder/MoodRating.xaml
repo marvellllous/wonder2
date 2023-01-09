@@ -2,11 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wonder.MoodRating">
-    <ContentPage.Content>
+    <ContentPage.BindingContext>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Text="1" />
+                <BoxView Grid.Column="0" Color="Red" HeightRequest="{Binding MoodRating1Percent}" />
+                <Label Grid.Column="1" Text="2" />
+                <BoxView Grid.Column="1" Color="Orange" HeightRequest="{Binding MoodRating2Percent}" />
+                <Label Grid.Column="2" Text="3" />
+                <BoxView Grid.Column="2" Color="Yellow" HeightRequest="{Binding MoodRating3Percent}" />
+                <Label Grid.Column="3" Text="4" />
+                <BoxView Grid.Column="3" Color="Green" HeightRequest="{Binding MoodRating4Percent}" />
+                <Label Grid.Column="4" Text="5" />
+                <BoxView Grid.Column="4" Color="Blue" HeightRequest="{Binding MoodRating5Percent}" />
+            </Grid>
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" />
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.BindingContext>
 </ContentPage>
