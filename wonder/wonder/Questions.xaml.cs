@@ -21,35 +21,34 @@ namespace wonder
             InitializeComponent();
 
             // The Questiongetandset are added to the questiongetandsets collecgtion
-            questiongetandsets = new List<Questiongetandset>()
+            questiongetandsets = new List<Questiongetandset>();
             {
-                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" },
-                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" },
-                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" }
-            };
+                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" };
+                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" };
+                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" };
+            }
+            
 
-
-
-            answers = new List<Answer>()
+            answers = new List<Answer>();
             {
-                new Answer() { Value = 1, Text = "Yes", IsSelected = false },
-                new Answer() { Value = 2, Text = "No", IsSelected = false },
-                new Answer() { Value = 3, Text = "Sort of", IsSelected = false }
+                new Answer() { Value = 1, Text = "Yes", IsSelected = false };
+                new Answer() { Value = 2, Text = "No", IsSelected = false };
+                new Answer() { Value = 3, Text = "Sort of", IsSelected = false };
+                
+            }
 
-            };
-        }
             /*
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Is anything worrying you?",
-                QAnswer = "Yes "
+                //QAnswer = "Yes "
               
             });
 
             questiongetandsets.Add(new Questiongetandset
             {
                 QName = "Do you usually feel very tired?",
-                QAnswer = "Yes",
+                //QAnswer = "Yes",
                
             });
 
@@ -58,10 +57,10 @@ namespace wonder
                 QName = "Is it easy for you to fall asleep?",
                 //QAnswer = "Yes"
             });
-            /*
+            */
 
             // This is set to the Questions object
-            BindingContext = this;
+           // BindingContext = this;
 
         }
 
