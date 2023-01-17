@@ -21,10 +21,21 @@
                         <Label Grid.Row="0"
                            FontAttributes="Bold"
                            Text="{Binding Number}"/>
+
+                        <Button x:Name="Yes"
+                                Text="YES"
+                                Clicked="Yes_Clicked"/>
+                        <Button x:Name="No"
+                                Text="NO"
+                                Clicked ="Yes_Clicked"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button x:Name="Submit"
+                Text="SUBMIT"
+                Clicked="Submit_Clicked"/>
+        
         <!-- <CollectionView ItemsSource="{Binding Source={x:Reference Questiongetandset }}"
                             SelectionMode="Single">
 

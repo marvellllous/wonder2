@@ -140,7 +140,10 @@ namespace wonder
 
         }
 
-        
+        private void No_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
