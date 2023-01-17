@@ -1,37 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wonder.Questions">
-    <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding questiongetandsets}">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Viewmodel="clr-namespace:wonder"
+             x:Class="wonder.Questions"
+             x:Name="Questiongetandset">
+    <ContentPage.BindingContext>
+        <Viewmodel:Questiongetandset/>
+    </ContentPage.BindingContext>
+    <StackLayout Margin=" 20,35,20,20">
+        <CollectionView x:Name="listView" 
+			  ItemsSource="{Binding .}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Padding="10"
+                          RowDefinitions="Auto, *"
+                          ColumnDefinitions="Auto, *">
                         <Label Grid.Column="1"
-                               Text="{Binding QName}"
-                               FontAttributes="Bold"/>
-                        <Button Grid.Column="1"
-                               x:Name="No"
-                               Grid.Row="1"
-                               Text="NO"
-                               IsEnabled="True"
-                               FontAttributes="Bold"
-                               Clicked="Yes_Clicked"/>
-                        <Button Grid.Column="2"
-                                x:Name="Yes"
-                                Grid.Row="1"
-                                Text="YES"
-                                IsEnabled="True"
-                                FontAttributes="Bold"
-                                Clicked="Yes_Clicked"></Button>
-                        <Button VerticalOptions="Center"
-                                HorizontalOptions="Center"
-                                x:Name="Submit"
-                                Text="Submit"
-                                Clicked="Submit_Clicked" />
+                           Text="{Binding QName}"
+                           FontAttributes="Bold"/>
+                        <Label Grid.Row="0"
+                           FontAttributes="Bold"
+                           Text="{Binding Number}"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </ContentPage.Content>
+        <!-- <CollectionView ItemsSource="{Binding Source={x:Reference Questiongetandset }}"
+                            SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10"
+                          RowDefinitions="Auto, *"
+                          ColumnDefinitions="Auto, *">
+                    <Label Grid.Column="1"
+                           Text="{Binding QName}"
+                           FontAttributes="Bold"/>
+                    <Label Grid.Row="0"
+                           FontAttributes="Bold"
+                           Text="{Binding Number}"/>
+                </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        -->
+    </StackLayout>   
 </ContentPage>
