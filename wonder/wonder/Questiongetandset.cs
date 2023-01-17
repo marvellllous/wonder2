@@ -8,15 +8,15 @@ namespace wonder
     {
         public int Number { get; set; }
         public string QName { get; set; }
-        public List<Answer> Answers { get; set; }
+        //public List<Answer> Answers { get; set; }
         //public string QAnswer { get; set; }
 
-        /*public override string ToString()
+        public override string ToString()
         {
             return QName;
            // return QAnswer;
         }
-        */
+        
     }
     
     public class Answer

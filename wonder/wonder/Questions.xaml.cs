@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -13,75 +10,93 @@ namespace wonder
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Questions : ContentPage
     {
-        public List<Questiongetandset> questiongetandsets { get; private set; }    
-        public List<Answer> answers { get; private set; }
+        public static int score_Y = 0;
+        public static int score_N = 0;
+        public List<Questiongetandset> questionsToAsk { get; set; }
+        public List<Answer> Answers { get; set; }
+        /*
+
+        // This should be global 
+        public static int score_Y = 0;
+        public static int score_N = 0;
+        public Questions()
+        {
+            InitializeComponent();
+            Debug.WriteLine("in questions class");
+            // The Questiongetandset are added to the questiongetandsets collecgtion
+            questionsToAsk = new List<Questiongetandset>()
+            {
+                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" },
+                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" },
+                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" },
+            };
+
+
+            Answers = new List<Answer>()
+            {
+                new Answer() { Value = 1, Text = "Yes", IsSelected = false },
+                new Answer() { Value = 2, Text = "No", IsSelected = false },
+                new Answer() { Value = 3, Text = "Sort of", IsSelected = false },
+
+            };
+
+
+        }
+        */
+        public List<Questiongetandset> Modal { get; private set; }
 
         public Questions()
         {
             InitializeComponent();
-
-            // The Questiongetandset are added to the questiongetandsets collecgtion
-            questiongetandsets = new List<Questiongetandset>();
-            {
-                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" };
-                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" };
-                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" };
-            }
-            
-
-            answers = new List<Answer>();
-            {
-                new Answer() { Value = 1, Text = "Yes", IsSelected = false };
-                new Answer() { Value = 2, Text = "No", IsSelected = false };
-                new Answer() { Value = 3, Text = "Sort of", IsSelected = false };
-                
-            }
-
             /*
-            questiongetandsets.Add(new Questiongetandset
+            Modal = new List<Questiongetandset>();
+            Modal.Add(new Questiongetandset
             {
-                QName = "Is anything worrying you?",
-                //QAnswer = "Yes "
-              
+
+                QName = "How are you"
+
             });
 
-            questiongetandsets.Add(new Questiongetandset
+            Modal = new List<Questiongetandset>();
+            Modal.Add(new Questiongetandset
             {
-                QName = "Do you usually feel very tired?",
-                //QAnswer = "Yes",
-               
+
+                QName = "Do you slep well"
+
             });
 
-            questiongetandsets.Add(new Questiongetandset
-            {
-                QName = "Is it easy for you to fall asleep?",
-                //QAnswer = "Yes"
-            });
+            BindingContext = this;
             */
 
-            // This is set to the Questions object
-           // BindingContext = this;
+            questionsToAsk = new List<Questiongetandset>()
+            {
+                new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" },
+                new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" },
+                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" },
+            };
 
+
+            Answers = new List<Answer>()
+            {
+                new Answer() { Value = 1, Text = "Yes", IsSelected = false },
+                new Answer() { Value = 2, Text = "No", IsSelected = false },
+                new Answer() { Value = 3, Text = "Sort of", IsSelected = false },
+
+            };
+            this.BindingContext = questionsToAsk;
         }
 
-            /*
-            if(button.Id.ToString() == "Yes")
-            {
+        private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
 
-            }
-            */
-        // This should be global 
-        public static int score_Y = 0;
-        public static int score_N = 0;
-
-       
         private  async void Yes_Clicked(object sender, EventArgs e)
         {
     
             
             Button button = (Button)sender;
             //Console.WriteLine(score_N);
-            //var classId = button.ClassId;
+            var classId = button.ClassId;
             //Console.WriteLine(classId);
 
             // This gets the ID of any botton that is being clicked so that there is no need to right it again for anoher button 
@@ -124,5 +139,8 @@ namespace wonder
            
 
         }
+
+        
     }
+
 }
