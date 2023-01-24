@@ -13,7 +13,7 @@ namespace wonder
         public static int score_Y = 0;
         public static int score_N = 0;
         public List<Questiongetandset> questionsToAsk { get; set; }
-        public List<Answer> Answers { get; set; }
+        //public List<Answer> Answers { get; set; }
         /*
 
         // This should be global 
@@ -72,10 +72,10 @@ namespace wonder
             {
                 new Questiongetandset() { Number = 1, QName = "Is anything worrying you?" },
                 new Questiongetandset() { Number = 2, QName = "Do you usually feel very tired?" },
-                new Questiongetandset() { Number = 2, QName = "Is it easy for you to fall asleep?" },
+                new Questiongetandset() { Number = 3, QName = "Is it easy for you to fall asleep?" },
             };
 
-
+            /*
             Answers = new List<Answer>()
             {
                 new Answer() { Value = 1, Text = "Yes", IsSelected = false },
@@ -83,6 +83,7 @@ namespace wonder
                 new Answer() { Value = 3, Text = "Sort of", IsSelected = false },
 
             };
+            */
             this.BindingContext = questionsToAsk;
         }
 
@@ -94,34 +95,7 @@ namespace wonder
         {
     
             
-            Button button = (Button)sender;
-            //Console.WriteLine(score_N);
-            var classId = button.ClassId;
-            //Console.WriteLine(classId);
 
-            // This gets the ID of any botton that is being clicked so that there is no need to right it again for anoher button 
-            switch (button.Text)
-            { 
-                case "YES":
-                    score_Y++;
-                    // Console.WriteLine(score_Y);
-                    //await DisplayAlert("messege", "hello", "ok");
-                    button.IsEnabled = false;
-                    await Task.Delay(2000);
-                    button.IsEnabled = true;
-                    break;
-                case "NO":
-                    score_N++;
-                    Console.WriteLine(score_N);
-                    //await DisplayAlert("messege", "bye", "ok");
-                    button.IsEnabled = false;
-                    await Task.Delay(2000);
-                    button.IsEnabled = true;
-                    break;
-                default :
-                    break;
-         
-            }
 
             
         }
@@ -143,6 +117,38 @@ namespace wonder
         private void No_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private async void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+           RadioButton button = (RadioButton)sender;
+            //Console.WriteLine(score_N);
+            Console.WriteLine(button.Id.ToString());
+            var IDOfButton = (sender as RadioButton).StyleId;
+
+            // This gets the ID of any botton that is being clicked so that there is no need to right it again for anoher button 
+            switch (IDOfButton)
+            {
+                case "Yes":
+                    score_Y++;
+                    // Console.WriteLine(score_Y);
+                    //await DisplayAlert("messege", "hello", "ok");
+                    button.IsEnabled = false;
+                    await Task.Delay(2000);
+                    button.IsEnabled = true;
+                    break;
+                case "No":
+                    score_N++;
+                    Console.WriteLine(score_N);
+                    //await DisplayAlert("messege", "bye", "ok");
+                    button.IsEnabled = false;
+                    await Task.Delay(2000);
+                    button.IsEnabled = true;
+                    break;
+                default:
+                    break;
+
+            }
         }
     }
 

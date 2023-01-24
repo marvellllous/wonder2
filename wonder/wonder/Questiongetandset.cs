@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace wonder
@@ -14,18 +15,18 @@ namespace wonder
         public override string ToString()
         {
             return QName;
-           // return QAnswer;
+            
         }
         
     }
-    
+    /*
     public class Answer
     {
         public string Text { get; set; }
         public int Value { get; set; }
         public bool IsSelected { get; set; }
     }
-
+    */
     
     /*
     internal class Questiongetandset
