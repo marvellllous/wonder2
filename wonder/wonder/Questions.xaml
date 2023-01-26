@@ -29,14 +29,7 @@
                         <RadioButton x:Name="Yes" Content="Yes" Grid.Column="2" CheckedChanged="RadioButton_CheckedChanged" FlowDirection= "LeftToRight"/>
                         <RadioButton x:Name="No" Content="No" Grid.Column="3" CheckedChanged="RadioButton_CheckedChanged" FlowDirection= "LeftToRight"/>
 
-                        <!--<Button x:Name="Yes"
-                                Text="YES"
-                                Clicked="Yes_Clicked"
-                                />
-                        <Button x:Name="No"
-                                Text="NO"
-                                Clicked ="Yes_Clicked"/>
-                        -->
+                       
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -45,24 +38,5 @@
                 Text="SUBMIT"
                 Clicked="Submit_Clicked"/>
         
-        <!-- <CollectionView ItemsSource="{Binding Source={x:Reference Questiongetandset }}"
-                            SelectionMode="Single">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10"
-                          RowDefinitions="Auto, *"
-                          ColumnDefinitions="Auto, *">
-                    <Label Grid.Column="1"
-                           Text="{Binding QName}"
-                           FontAttributes="Bold"/>
-                    <Label Grid.Row="0"
-                           FontAttributes="Bold"
-                           Text="{Binding Number}"/>
-                </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        -->
     </StackLayout>   
 </ContentPage>
