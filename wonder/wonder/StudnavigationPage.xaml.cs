@@ -24,7 +24,12 @@ namespace wonder
 
         private void MoodRating_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new Moodrating());
+        }
 
+        private void Articles_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Articules());
         }
     }
 }

@@ -17,6 +17,11 @@
                     Text="Mood rating"
                     x:Name="MoodRating"
                     Clicked="MoodRating_Clicked"/>
+            <Button Grid.Column="2" Grid.Row="1" 
+                    BackgroundColor="DodgerBlue" 
+                    Text="Articles"
+                    x:Name="Articles"
+                    Clicked="Articles_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

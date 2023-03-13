@@ -1,41 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wonder.MoodRating">
+             x:Class="wonder.Moodrating">
     <ContentPage.Content>
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="44"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Please rate how you feel today " FontSize="24"/>
+        </Grid>
             
-            <!-- 1. Create a Xamarin.Forms project.
-
-                2. Add a ContentPage to the project.
-
-                3. Add a StackLayout to the ContentPage.
-
-                4. Add a Label to the StackLayout.
-
-                5. Add a Slider to the StackLayout.
-
-                6. Add a Label to the StackLayout to display the current mood rating.
-
-                7. Add a ChartView to the StackLayout.
-
-                 8. Create a List of MoodRating objects.
-
-                9. Create a method to add a MoodRating object to the List.
-
-                10. Create a method to update the ChartView with the List of MoodRating objects.
-
-                11. Create an event handler for the Slider's ValueChanged event.
-
-                12. In the event handler, call the method to add a MoodRating object to the List.
-
-                13. In the event handler, call the method to update the ChartView with the List of MoodRating objects.
-
-                14. Run the application and test the mood rating graph.
-            -->
+            <RadioButton x:Name="one" Content="01" Grid.Column="1" Grid.Row="1" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="two" Content="02" Grid.Column="0" Grid.Row="0" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="three" Content="03" Grid.Column="1" Grid.Row="1" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="four" Content="04" Grid.Column="0" Grid.Row="0" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="five" Content="05" Grid.Column="1" Grid.Row="1" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="six" Content="06" Grid.Column="0" Grid.Row="0" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="seven" Content="07" Grid.Column="1" Grid.Row="1" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="eight" Content="08" Grid.Column="0" Grid.Row="0" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="nine" Content="09" Grid.Column="1" Grid.Row="1" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <RadioButton x:Name="ten" Content="10" Grid.Column="0" Grid.Row="0" CheckedChanged="one_CheckedChanged" FlowDirection= "LeftToRight"/>
+            <Button x:Name="numb_Submit"
+                Text="SUBMIT"
+                Clicked="numb_Submit_Clicked"
+            />
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

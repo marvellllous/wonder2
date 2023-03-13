@@ -17,12 +17,12 @@ namespace wonder
             InitializeComponent();
         }
 
-        public async Task<bool> IsUsernameTakenAsync(string username)
+        public async Task<bool> IsUsernameTakenAsync(string username,string passoword)
         {
-            bool exists = await App.Database.CheckUsernameAsync(username);
+            bool exists = await App.Database.CheckUsernameAsync(username,passoword);
             return exists;
         }
-
+        
         async private void Register_Clicked(object sender, EventArgs e)
         {
 
@@ -32,7 +32,7 @@ namespace wonder
             newPerson.Password = Password.Text;
 
            
-            if ( await IsUsernameTakenAsync(UserName.Text))
+            if ( await IsUsernameTakenAsync(UserName.Text,Password.Text))
             {
                 await this.DisplayAlert( "messege",  "Usernasme taken", "ok");
             }
